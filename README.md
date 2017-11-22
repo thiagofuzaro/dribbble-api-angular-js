@@ -12,7 +12,7 @@
 >
 > 3.Instale [Gulp](https://gulpjs.com/)
 >
-> 4.Clone esse repositório usando ` git clone https://github.com/thiagofuzaro/dribbble-angular-js.git `
+> 4.Clone esse repositório usando ` git clone https://github.com/thiagofuzaro/dribbble-api-angular-js.git `
 >
 > 5.Rode os comandos no prompt de comando dentro da pasta do projeto:
 >
