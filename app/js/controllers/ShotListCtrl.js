@@ -5,9 +5,7 @@
         .module( 'App' )
         .controller( 'ShotListCtrl', [ '$scope', 'ServiceURL', 'XHRFactory', 'AlertMessages', 'URLParams', function( $scope, ServiceURL, XHRFactory, AlertMessages, URLParams ) {
             // variáveis
-            var messages = AlertMessages,
-                URLParams = URLParams,
-                shotsPage = 1;
+            var shotsPage = 1;
 
             // variáveis expostas
             $scope.shots = [];
@@ -25,9 +23,9 @@
 
             function getShots() {
                 var getShotsURL = ServiceURL.getShotsURI
-                .replace( '{page}', URLParams.page + shotsPage )
-                .replace( '{perPage}', URLParams.perPage + '12' )
-                .replace( '{accessToken}',  URLParams.accessToken + localStorage.clientAccessToken );
+                    .replace( '{page}', URLParams.page + shotsPage )
+                    .replace( '{perPage}', URLParams.perPage + '12' )
+                    .replace( '{accessToken}',  URLParams.accessToken + localStorage.clientAccessToken );
 
                 XHRFactory
                 .get( getShotsURL )
@@ -40,7 +38,7 @@
             }
 
             function getShotsFail( response ) {
-                $scope.serviceFail = messages.shotsListFail;
+                $scope.serviceFail = AlertMessages.shotsListFail;
             }
 
             function getMoreShots() {
