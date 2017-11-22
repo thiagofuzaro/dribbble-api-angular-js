@@ -5,8 +5,7 @@
         .module( 'App' )
         .controller( 'ShotCtrl', [ '$scope', 'ServiceURL', 'XHRFactory', '$routeParams', 'AlertMessages', 'URLParams', function( $scope, ServiceURL, XHRFactory, $routeParams, AlertMessages, URLParams ) {
             // variáveis
-            var shotId = $routeParams.id,
-                messages = AlertMessages;
+            var shotId = $routeParams.id;
 
             // variáveis expostas
             $scope.shot = [];
@@ -35,7 +34,7 @@
             }
 
             function getCurrentShotFail( response ) {
-                $scope.serviceFail = messages.currentShotFail;
+                $scope.serviceFail = AlertMessages.currentShotFail;
             }
 
             function shotLike() {
@@ -55,7 +54,7 @@
             }
 
             function shotLikeFail( response ) {
-                $scope.serviceFail = messages.likeShotFail;
+                $scope.serviceFail = AlertMessages.likeShotFail;
             }
 
             init();
