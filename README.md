@@ -1,4 +1,4 @@
-# dribbble-angular-js
+﻿# dribbble-angular-js
 
 ## Introdução
 
@@ -12,9 +12,11 @@
 >
 > 3.Instale [Gulp](https://gulpjs.com/)
 >
-> 4.Clone esse repositório usando ` git clone https://github.com/thiagofuzaro/dribbble-api-angular-js.git `
+> 4.Instale [Git](https://git-scm.com/download/win) 
 >
-> 5.Rode os comandos no prompt de comando dentro da pasta do projeto:
+> 5.Clone esse repositório usando ` git clone https://github.com/thiagofuzaro/dribbble-api-angular-js.git `
+>
+> 6.Rode os comandos no prompt de comando dentro da pasta do projeto:
 >
 > ``` npm install && bower install (instala as dependências do projeto) ```
 >
