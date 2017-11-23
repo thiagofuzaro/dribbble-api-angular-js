@@ -1,6 +1,6 @@
 {
   "name": "dribbble-angular-js",
-  "description": "Dribbble Api",
+  "description": "Dribbble Api com AngularJS e Bootstrap",
   "main": "index.js",
   "authors": [
     "Thiago Carvalho Fuzaro"
