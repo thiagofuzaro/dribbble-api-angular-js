@@ -3,13 +3,16 @@
 
     angular
         .module( 'App' )
-        .controller( 'ShotListCtrl', [ '$scope', 'XHRService', 'AlertMessages', function( $scope, XHRService, AlertMessages ) {
+        .controller( 'ShotListCtrl', [ '$scope', 'ServiceURL', 'XHRFactory', 'AlertMessages', 'URLParams', function( $scope, ServiceURL, XHRFactory, AlertMessages, URLParams ) {
+            // variáveis
             var shotsPage = 1;
 
+            // variáveis expostas
             $scope.shots = [];
             $scope.shotSize = "";
             $scope.serviceFail = "";
             
+            // funções expostas
             $scope.getShots = getShots;
             $scope.resizeShots = resizeShots;
             $scope.getMoreShots = getMoreShots;
@@ -19,7 +22,13 @@
             }
 
             function getShots() {
-                XHRService.getShots( shotsPage )
+                var getShotsURL = ServiceURL.getShotsURI
+                    .replace( '{page}', URLParams.page + shotsPage )
+                    .replace( '{perPage}', URLParams.perPage + '12' )
+                    .replace( '{accessToken}',  URLParams.accessToken + localStorage.clientAccessToken );
+
+                XHRFactory
+                .get( getShotsURL )
                 .then ( getShotsDone, getShotsFail );
             }
 

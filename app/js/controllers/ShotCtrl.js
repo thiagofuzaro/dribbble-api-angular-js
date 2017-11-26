@@ -3,19 +3,29 @@
 
     angular
         .module( 'App' )
-        .controller( 'ShotCtrl', [ '$scope', 'XHRService', 'AlertMessages', function( $scope, XHRService, AlertMessages ) {
+        .controller( 'ShotCtrl', [ '$scope', 'ServiceURL', 'XHRFactory', '$routeParams', 'AlertMessages', 'URLParams', function( $scope, ServiceURL, XHRFactory, $routeParams, AlertMessages, URLParams ) {
+            // variáveis
+            var shotId = $routeParams.id;
+
+            // variáveis expostas
             $scope.shot = [];
             $scope.serviceFail = "";
             $scope.shotLiked = false;
             
-            $scope.likeShot = likeShot;
+            // funções expostas
+            $scope.shotLike = shotLike;
 
             function init() {
-                getShot();
+                getCurrentShot();
             }
 
-            function getShot() {
-                XHRService.getShot()
+            function getCurrentShot() {
+                var getCurrentShotURL = ServiceURL.getCurrentShotURI
+                    .replace( '{id}', shotId )
+                    .replace( '{accessToken}', URLParams.accessToken + localStorage.clientAccessToken );
+
+                XHRFactory
+                .get( getCurrentShotURL )
                 .then ( getCurrentShotDone, getCurrentShotFail );
             }
 
@@ -27,10 +37,15 @@
                 $scope.serviceFail = AlertMessages.currentShotFail;
             }
 
-            function likeShot() {
+            function shotLike() {
+                var shotLikeURL = ServiceURL.getLikeURI
+                    .replace( '{id}', shotId )
+                    .replace( '{accessToken}', URLParams.accessToken + localStorage.clientAccessToken );
+
                 $scope.shotLiked = true;
 
-                XHRService.likeShot()
+                XHRFactory
+                .post( shotLikeURL )
                 .then ( shotLikeDone, shotLikeFail );
             }
 

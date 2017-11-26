@@ -23,7 +23,8 @@
                 'bower_components/angular-sanitize/angular-sanitize.min.js',
                 'bower_components/angular-i18n/angular-locale_pt-br.js',
                 'bower_components/angular-bootstrap/ui-bootstrap.min.js',
-                'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'
+                'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+                'bower_components/angular-ui-mask/dist/mask.min.js'
             ],
             defaultJS: [
                 // app
@@ -35,17 +36,21 @@
                 'app/js/constants/ServiceURL.js',
                 'app/js/constants/AlertMessages.js',
                 'app/js/constants/URLParams.js',
-                // controllers
-                'app/js/controllers/ShotListCtrl.js',
-                'app/js/controllers/ShotCtrl.js',
                 // directives
                 'app/js/directives/loading.js',
                 'app/js/directives/alertMessage.js',
                 'app/js/directives/goTop.js',
                 // factories
+                'app/js/factories/XHRFactory.js',
                 'app/js/factories/HttpInterceptorFactory.js',
-                // services
-                'app/js/services/XHRService.js'
+                // controllers
+                'app/js/controllers/ShotListCtrl.js',
+                'app/js/controllers/ShotCtrl.js'
+            ],
+            mockJS: [
+                'bower_components/angular-mocks/angular-mocks.js',
+                'app/js/mock/AppMock.js',
+                'app/js/mock/mock.js'
             ],
             vendorCSS: [
                 'bower_components/bootstrap/dist/css/bootstrap.min.css',
@@ -93,7 +98,7 @@
 
     gulp.task( 'concatJs', [ 'jshint' ], function() {
         return gulp
-            .src( files.vendorJS.concat( files.defaultJS ) )
+            .src( files.vendorJS.concat( files.defaultJS.concat( files.mockJS ) ) )
             .pipe( concat( 'App.js' ) )
             .pipe( gulp.dest( 'preview/js' ) );
     });
