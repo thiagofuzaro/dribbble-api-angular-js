@@ -3,12 +3,12 @@
 
     angular
         .module( 'App' )
-        .controller( 'ShotListCtrl', [ '$scope', 'XHRService', 'AlertMessages', function( $scope, XHRService, AlertMessages ) {
+        .controller( 'ShotListCtrl', [ '$scope', 'ShotListServices', 'AlertMessages', function( $scope, ShotListServices, AlertMessages ) {
             var shotsPage = 1;
 
             $scope.shots = [];
-            $scope.shotSize = "";
-            $scope.serviceFail = "";
+            $scope.shotSize = '';
+            $scope.serviceFail = '';
             
             $scope.getShots = getShots;
             $scope.resizeShots = resizeShots;
@@ -19,7 +19,7 @@
             }
 
             function getShots() {
-                XHRService.getShots( shotsPage )
+                ShotListServices.getShots( shotsPage )
                 .then ( getShotsDone, getShotsFail );
             }
 

@@ -6,6 +6,7 @@
         .directive( 'loading', [function() {
             return {
                 restrict: 'E',
+                templateUrl: '/templates/directives/loading.html',
                 link: function( scope, element, attrs ) {
                     var requests = 0;
 
@@ -26,8 +27,7 @@
                             requests--;
                         }
                     });
-                },
-                templateUrl: '/templates/directives/loading.html'
+                }
             };
         }]);
 }());

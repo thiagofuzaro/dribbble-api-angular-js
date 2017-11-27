@@ -3,9 +3,9 @@
 
     angular
         .module( 'App' )
-        .controller( 'ShotCtrl', [ '$scope', 'XHRService', 'AlertMessages', function( $scope, XHRService, AlertMessages ) {
+        .controller( 'ShotCtrl', [ '$scope', 'ShotServices', 'AlertMessages', function( $scope, ShotServices, AlertMessages ) {
             $scope.shot = [];
-            $scope.serviceFail = "";
+            $scope.serviceFail = '';
             $scope.shotLiked = false;
             
             $scope.likeShot = likeShot;
@@ -15,7 +15,7 @@
             }
 
             function getShot() {
-                XHRService.getShot()
+                ShotServices.getShot()
                 .then ( getCurrentShotDone, getCurrentShotFail );
             }
 
@@ -30,7 +30,7 @@
             function likeShot() {
                 $scope.shotLiked = true;
 
-                XHRService.likeShot()
+                ShotServices.likeShot()
                 .then ( shotLikeDone, shotLikeFail );
             }
 

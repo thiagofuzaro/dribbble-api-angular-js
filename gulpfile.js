@@ -44,8 +44,10 @@
                 'app/js/directives/goTop.js',
                 // factories
                 'app/js/factories/HttpInterceptorFactory.js',
+                'app/js/factories/XHRFactory.js',
                 // services
-                'app/js/services/XHRService.js'
+                'app/js/services/ShotListServices.js',
+                'app/js/services/ShotServices.js'
             ],
             vendorCSS: [
                 'bower_components/bootstrap/dist/css/bootstrap.min.css',

@@ -3,17 +3,8 @@
 
     angular
         .module( 'App' )
-        .service( 'XHRService', [ '$http', 'ServiceURL', 'URLParams', '$routeParams', function( $http, ServiceURL, URLParams, $routeParams ) {
+        .service( 'ShotServices', [ 'XHRFactory', 'ServiceURL', 'URLParams', '$routeParams', function( XHRFactory, ServiceURL, URLParams, $routeParams ) {
             var shotId;
-
-            this.getShots = function( shotsPage ) {
-                var getShotsURL = ServiceURL.getShotsURI
-                    .replace( '{page}', URLParams.page + shotsPage )
-                    .replace( '{perPage}', URLParams.perPage + '12' )
-                    .replace( '{accessToken}',  URLParams.accessToken + localStorage.clientAccessToken );
-
-                return $http.get( getShotsURL );
-            };
 
             this.getShot = function() {
                 shotId = $routeParams.id;
@@ -22,7 +13,7 @@
                     .replace( '{id}', shotId )
                     .replace( '{accessToken}', URLParams.accessToken + localStorage.clientAccessToken );
 
-                return $http.get( getCurrentShotURL );
+                return XHRFactory.get( getCurrentShotURL );
             };
 
             this.likeShot = function() {
@@ -30,7 +21,7 @@
                     .replace( '{id}', shotId )
                     .replace( '{accessToken}', URLParams.accessToken + localStorage.clientAccessToken );
 
-                return $http.post( likeShotURL );
+                return XHRFactory.post( likeShotURL );
             };
         }]);
 }());
