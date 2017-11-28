@@ -5,10 +5,10 @@
     	color: #fff !important;
 	    background-color: #f3679d;
 	    border-color: #ff4b90;
-    }
 
-    &--01:hover {
-	    background-color: #ea4c89;
-	    border-color: #ff4b90;
-	}
+	    &:hover {
+	    	background-color: #ea4c89;
+	    	border-color: #ff4b90;
+	    }
+    }
 }

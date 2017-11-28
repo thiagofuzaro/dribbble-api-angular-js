@@ -17,13 +17,13 @@
 	</div>
 	<div class="row">
 		<div class="margin--b25" ng-class="shotSize === 'small' ? 'col-sm-3 col-xs-6' : shotSize === 'large' ? 'col-sm-4 col-xs-12' : 'col-sm-3 col-xs-12'" ng-repeat="shot in shots | filter: search">
-			<a href="#/shot/{{ ::shot.id }}" class="text--decoration-off text-muted thumbnail" title="{{ ::shot.title }}">
+			<a href="#/shot/{{ ::shot.id }}" class="text--decoration--off text-muted thumbnail" title="{{ ::shot.title }}">
 				<figure>
 					<img src="{{ shotSize === 'small' ? shot.images.teaser : shotSize === 'large' ? shot.images.normal : shot.images.teaser }}" alt="{{ ::shot.title }}" class="img-rounded">
 					<p class="bg-info hover-desc hidden" ng-if="::shot.description" ng-bind-html="::shot.description"></p>
 					<figcaption>
 						<img src="{{ ::shot.user.avatar_url }}" alt="{{ ::shot.user.name }}" class="pull-left margin--r5 img__size--w16 img-circle">
-						<h4 class="font--size-16 text--nowrap">{{ ::shot.title }}</h4>
+						<h4 class="font--s16 text--nowrap">{{ ::shot.title }}</h4>
 					</figcaption>
 				</figure>
 			</a>

@@ -18,7 +18,7 @@ footer {
   background-color: #f5f5f5; }
 
 /* helpers text */
-.text--decoration-off {
+.text--decoration--off {
   text-decoration: none !important; }
 
 .text--nowrap {
@@ -26,14 +26,14 @@ footer {
   overflow: hidden !important;
   text-overflow: ellipsis; }
 
-.font--size-16 {
+.font--s16 {
   font-size: 16px !important; }
 
 /* helpers margin */
 .margin--0 {
   margin: 0px; }
 
-.margin--20 {
+.margin--tb20 {
   margin: 20px 0; }
 
 .margin--r5 {
@@ -135,7 +135,6 @@ footer {
   color: #fff !important;
   background-color: #f3679d;
   border-color: #ff4b90; }
-
-.btn--01:hover {
-  background-color: #ea4c89;
-  border-color: #ff4b90; }
+  .btn--01:hover {
+    background-color: #ea4c89;
+    border-color: #ff4b90; }
