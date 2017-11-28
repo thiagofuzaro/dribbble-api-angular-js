@@ -1,0 +1,21 @@
+/* helpers text */
+
+// text
+.text {
+	&--decoration-off {
+		text-decoration: none !important;
+	}
+
+	&--nowrap {
+		white-space: nowrap;
+	    overflow:hidden !important;
+	    text-overflow: ellipsis;
+	}
+}
+
+// font-size
+.font {
+	&--size-16{
+		font-size: 16px !important;
+	}
+}

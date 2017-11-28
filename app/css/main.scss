@@ -1,17 +1,14 @@
 // configurations
 @import "configurations";
 
-// footer
-@import "footer";
+// helpers
+@import "./helpers/text";
+@import "./helpers/margin";
+@import "./helpers/padding";
+@import "./helpers/img";
 
-// helper
-@import "helper";
-
-// buttons
-@import "buttons";
-
-// shotBehavior
-@import "shotBehavior";
-
-// loading
-@import "./directives/loading";
+// Components
+@import "./components/loading";
+@import "./components/goTop";
+@import "./components/shots";
+@import "./components/buttons";

@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<alert-message ng-show="serviceFail" message="{{ serviceFail }}"></alert-message>
-		<div class="col-xs-12 col-sm-12 margin__bottom--15">
+		<div class="col-xs-12 col-sm-12 margin--b15">
 			<div class="form-inline pull-right">
 			  <div class="form-group">
 			    <input type="text" class="form-control" placeholder="O que deseja buscar?" ng-model="search">
@@ -16,22 +16,22 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="margin__bottom--25" ng-class="shotSize === 'small' ? 'col-sm-3 col-xs-6' : shotSize === 'large' ? 'col-sm-4 col-xs-12' : 'col-sm-3 col-xs-12'" ng-repeat="shot in shots | filter: search">
-			<a href="#/shot/{{ shot.id }}" class="no-style__link text-muted thumbnail" title="{{ shot.title }}">
+		<div class="margin--b25" ng-class="shotSize === 'small' ? 'col-sm-3 col-xs-6' : shotSize === 'large' ? 'col-sm-4 col-xs-12' : 'col-sm-3 col-xs-12'" ng-repeat="shot in shots | filter: search">
+			<a href="#/shot/{{ ::shot.id }}" class="text--decoration-off text-muted thumbnail" title="{{ ::shot.title }}">
 				<figure>
-					<img src="{{ shotSize === 'small' ? shot.images.teaser : shotSize === 'large' ? shot.images.normal : shot.images.teaser }}" alt="{{ shot.title }}" class="img-rounded">
-					<p class="bg-info hover-desc hidden" ng-if="shot.description" ng-bind-html="shot.description"></p>
+					<img src="{{ shotSize === 'small' ? shot.images.teaser : shotSize === 'large' ? shot.images.normal : shot.images.teaser }}" alt="{{ ::shot.title }}" class="img-rounded">
+					<p class="bg-info hover-desc hidden" ng-if="::shot.description" ng-bind-html="::shot.description"></p>
 					<figcaption>
-						<img src="{{ shot.user.avatar_url }}" alt="{{ shot.user.name }}" class="pull-left avatar-teaser img-circle">
-						<h4 class="font__size--15 nowrap">{{ shot.title }}</h4>
+						<img src="{{ ::shot.user.avatar_url }}" alt="{{ ::shot.user.name }}" class="pull-left margin--r5 img__size--w16 img-circle">
+						<h4 class="font--size-16 text--nowrap">{{ ::shot.title }}</h4>
 					</figcaption>
 				</figure>
 			</a>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12 col-sm-12 text-center margin__bottom--25">
-			<button type="button" class="btn btn__theme--01" ng-click="getMoreShots()"><span class="glyphicon glyphicon-plus"></span> Carregar mais shots</button>
+		<div class="col-xs-12 col-sm-12 text-center margin--b25">
+			<button type="button" class="btn btn--01" ng-click="getMoreShots()"><span class="glyphicon glyphicon-plus"></span> Carregar mais shots</button>
 		</div>
 	</div>
 	<go-top></go-top>

@@ -1,0 +1,26 @@
+/* directive goTop */
+
+.go-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    background: #ea4c89;
+    border-radius: 50%;
+    text-align: center;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    span {
+        font-size: 20px;
+        padding: 14px;
+        color: #FFF;
+    }
+
+}

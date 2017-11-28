@@ -6,7 +6,7 @@
         .directive( 'loading', [function() {
             return {
                 restrict: 'E',
-                templateUrl: '/templates/directives/loading.html',
+                templateUrl: '/templates/components/loading.html',
                 link: function( scope, element, attrs ) {
                     var requests = 0;
 

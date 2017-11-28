@@ -1,0 +1,14 @@
+/* helpers img */
+
+// Size
+.img {
+	&__size {
+		&--w16 {
+			width: 16px;
+		}
+
+		&--w130 {
+			width: 130px;
+		}
+	}
+}

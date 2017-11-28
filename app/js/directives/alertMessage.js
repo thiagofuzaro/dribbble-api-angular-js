@@ -11,7 +11,7 @@
                 },
                 replace : true,
                 transclude: true,
-                templateUrl : '/templates/directives/alert-message.html'   
+                templateUrl : '/templates/components/alert-message.html'   
             };
         }]);
 }());

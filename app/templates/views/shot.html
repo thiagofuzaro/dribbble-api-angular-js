@@ -1,27 +1,27 @@
 <div class="container">
 	<div class="row">
 		<alert-message ng-show="serviceFail" message="{{ serviceFail }}"></alert-message>
-		<div class="col-xs-12 col-sm-6 margin__bottom--25">
-			<img src="{{ shot.images.hidpi ? shot.images.hidpi : shot.images.normal }}" alt="{{ shot.title }}" class="img-thumbnail m-b-15">
+		<div class="col-xs-12 col-sm-6 margin--b25">
+			<img src="{{ ::shot.images.hidpi ? shot.images.hidpi : shot.images.normal }}" alt="{{ ::shot.title }}" class="img-thumbnail m-b-15">
 		</div>
-		<div class="col-xs-12 col-sm-6 margin__bottom--25">
+		<div class="col-xs-12 col-sm-6 margin--b25">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
-			    <h2 class="margin__all--0">{{ shot.title }}</h2>
+			    <h2 class="margin--0">{{ ::shot.title }}</h2>
 			  </div>
 			  <div class="panel-body">
-			  	<span class="center-block margin__bottom--25">
-			  		<img src="{{ shot.user.avatar_url }}" alt="{{ shot.user.name }}" class="pull-left avatar-teaser img-circle">
-			  		Criado por <strong>{{ shot.user.name }}</strong>
+			  	<span class="center-block margin--b25">
+			  		<img src="{{ ::shot.user.avatar_url }}" alt="{{ ::shot.user.name }}" class="pull-left margin--r5 img__size--w16 img-circle">
+			  		Criado por <strong>{{ ::shot.user.name }}</strong>
 			  	</span>
-			    <p class="margin__bottom--25" ng-bind-html="shot.description"></p>
+			    <p class="margin--b25" ng-bind-html="::shot.description"></p>
 			  </div>
 			</div>
-			<span class="pull-left"><span class="glyphicon glyphicon-eye-open"></span> {{ shot.views_count }} views</span>
-			<button class="btn btn-default pull-right m-b-15" ng-click="likeShot()"><span class="glyphicon glyphicon-heart" ng-class="shotLiked ? 'text-info' : 'text-muted'"></span> {{ shot.likes_count }} likes</span></button>
+			<span class="pull-left"><span class="glyphicon glyphicon-eye-open"></span> {{ ::shot.views_count }} views</span>
+			<button class="btn btn-default pull-right margin--b15" ng-click="likeShot()"><span class="glyphicon glyphicon-heart" ng-class="shotLiked ? 'text-info' : 'text-muted'"></span> {{ ::shot.likes_count }} likes</span></button>
 		</div>
-		<div class="col-xs-12 col-sm-12 margin__bottom--25 text-center">
-			<a href="#/" class="btn btn__theme--01">Voltar</a>
+		<div class="col-xs-12 col-sm-12 margin--b25 text-center">
+			<a href="#/" class="btn btn--01">Voltar</a>
 		</div>
 	</div>
 </div>
